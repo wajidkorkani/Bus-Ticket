@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Location Tracker</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .location { margin-top: 20px; font-size: 18px; }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Device Location Tracker</h1>
+
+    {% if latitude and longitude %}
+        <div class="location">
+            <p>Latitude: {{ latitude }}</p>
+            <p>Longitude: {{ longitude }}</p>
+        </div>
+    {% else %}
+        <p>Location could not be determined. Please check your internet connection.</p>
+    {% endif %}
+
+    <button onclick="getLocation()">Refresh Location</button>
+
+    <script>
+        // Function to refresh the location using JavaScript
+        function getLocation() {
+            // This will reload the page to get the updated location
+            location.reload();
+        }
+    </script>
+
+</body>
+</html>
